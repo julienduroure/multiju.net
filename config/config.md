@@ -31,4 +31,5 @@ freeze_copy_dir: []
 
 default:
   display_sidebar: True
+  display_tags: False
 ---
