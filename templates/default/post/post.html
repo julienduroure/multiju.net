@@ -7,6 +7,17 @@
 {{page.title}}
 {% endblock %}
 
+{% block meta %}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{page.app.yasifipo['sitedata']['contact']['twitter_account']}}">
+<meta name="twitter:creator" content="{{page.app.yasifipo['sitedata']['contact']['twitter_account']}}">
+<meta name="twitter:title" content="{{page.title}}" />
+<meta name="twitter:image" content="http://{{page.app.yasifipo['config']['yasifipo_server']}}/{{ url_for('static', filename='logo.png')}}">
+<meta name="twitter:description" content="{{page.data.ftwitter_summury}}">
+
+{% endblock %}
+
 {% block body %}
 
 
