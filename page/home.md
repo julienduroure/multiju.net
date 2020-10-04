@@ -1,11 +1,21 @@
 ---
 url: ''
-title: Home
+title: MultiJu.Net
 static: img
 ref: home
-menu: [main]
+posts: True
+layout: home.html
 ---
 
-# multiju.net
+# MultiJu.Net
 
-WIP :)
+## Chaque jour, du lundi au vendredi <br/>
+#### ... Intelligence Artificielle, Data, Python ...
+## Une petite pastille, une info, un tuto...<br/>
+
+# Bientôt :)
+
+Pour ne rien rater, inscrits-toi pour <a href="{{'page//email.md'|yasifipo}}">recevoir les eMails Perso !</a>
+
+<br/>
+<br/>

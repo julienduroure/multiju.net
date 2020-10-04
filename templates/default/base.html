@@ -1,16 +1,50 @@
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<html>
-	<head>
-		<title>{% block title %}{% endblock %}</title>
-		{% block additional_scripts %}{% endblock %}
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/cucumber.css')}}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/yasifipo.css')}}">
-		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico')}}">
-	</head>
+<!DOCTYPE html>
+<html lang="en">
 
-	<body class="w3-light-grey">
-		{% include 'includes/header.html' %}
-		{% block body %}{% endblock %}
-		{% include 'includes/footer.html' %}
-	</body>
+<head>
+
+	{%block meta %}{%endblock %}
+
+  <title>{% block title %}{% endblock %}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{'page//home.md'|yasifipo}}">MultiJu.Net</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{'page//home.md'|yasifipo}}">MultiJu.Net
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{'page//email.md'|yasifipo}}">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+	<div style="min-height:20px"></div>
+  {% block body %}{% endblock %}
+
+	<!-- Bootstrap core JavaScript -->
+
+  <script src="{{ url_for('static', filename='js/jquery.slim.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+
+</body>
+
 </html>

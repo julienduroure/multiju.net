@@ -3,14 +3,10 @@
 {% block additional_scripts %}
 {% endblock %}
 
-{% block title %}
-{{page.title}}
-{% endblock %}
-
 {% block meta %}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="MultiJu.Net deeplearning intelligence artificielle">
+<meta name="description" content="MultiJu.Net DeepLearning Intelligence Artificielle">
 <meta name="author" content="MultiJu.Net">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -22,12 +18,23 @@
 
 {% endblock %}
 
+{% block title %}
+{{page.title}}
+{% endblock %}
+
 {% block body %}
 
 <div class="container">
   <div class="row">
     <div class="col-lg-12 text-center">
+
       {{page.content}}
+
+      <ul class="list-unstyled">
+        {% for post in page.posts.posts %}
+        <li><a href="{{post.url}}">{{post.title}}</a><li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </div>
