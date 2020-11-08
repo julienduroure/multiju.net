@@ -1,0 +1,6 @@
+code, blockquote {
+  background-color: #eeeeee;
+  display: inline-flex;
+  min-width: 90%;
+  padding: 10px;
+}
