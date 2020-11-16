@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@multiju.net">
+<meta name="twitter:creator" content="@multiju.net">
+<meta name="twitter:title" content="Visualiser un modèle Keras" />
+<meta name="twitter:image" content="http://multiju.net/../static/logo.png">
+<meta name="twitter:description" content="">
+
+
+
+  <title>
+Visualiser un modèle Keras
+</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/css/multiju.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="http://multiju.net">MultiJu.Net</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://multiju.net">MultiJu.Net
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://multiju.net/email/index.html">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+	<div style="min-height:20px"></div>
+  
+
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 text-center">
+  <h1><b>Visualiser un modèle Keras</b></h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Comment visualiser tes modèles Keras ?</h1>
+<p>Il existe plusieurs manières différentes de <strong>visualiser les modèles Keras</strong>.  </p>
+<p>Aujourd'hui, je vais te parler du <strong>plus simple</strong> :</p>
+<blockquote>
+<p>model.summary()</p>
+</blockquote>
+<p>Cela donne le résultat suivant :</p>
+<pre><code>Model: &quot;sequential_1&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_3 (Dense)              (None, 300)               235500    
+_________________________________________________________________
+dense_4 (Dense)              (None, 100)               30100     
+_________________________________________________________________
+dense_5 (Dense)              (None, 10)                1010      
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<p>C'est aussi simple que cela. Mais cela soulève quelques questions :</p>
+<ul>
+<li>Si j'ai un modèle assez conséquent, est ce que cela reste aussi <strong>lisible</strong> ?</li>
+</ul>
+<p>Par exemple, le modèle ResNet152 fait <strong>1092 lignes</strong>. Je ne vous affiche que les dernières lignes ici.
+(Je ne m'attarde pas ici sur le modèle, on aura l'occasion d'y revenir)  </p>
+<pre><code>conv5_block3_3_conv (Conv2D)    (None, 7, 7, 2048)   1050624     conv5_block3_2_relu[0][0]        
+__________________________________________________________________________________________________
+conv5_block3_3_bn (BatchNormali (None, 7, 7, 2048)   8192        conv5_block3_3_conv[0][0]        
+__________________________________________________________________________________________________
+conv5_block3_add (Add)          (None, 7, 7, 2048)   0           conv5_block2_out[0][0]           
+                                                                 conv5_block3_3_bn[0][0]          
+__________________________________________________________________________________________________
+conv5_block3_out (Activation)   (None, 7, 7, 2048)   0           conv5_block3_add[0][0]           
+__________________________________________________________________________________________________
+avg_pool (GlobalAveragePooling2 (None, 2048)         0           conv5_block3_out[0][0]           
+__________________________________________________________________________________________________
+predictions (Dense)             (None, 1000)         2049000     avg_pool[0][0]                   
+==================================================================================================
+Total params: 60,419,944
+Trainable params: 60,268,520
+Non-trainable params: 151,424
+__________________________________________________________________________________________________
+</code></pre>
+
+<p>On peut voir qu'il y a une colonne supplémentaire, dont le nom est <em>Connected to</em>, qui indique que le modèle n'est pas <strong>séquentiel</strong>, contrairement au 1er exemple. On aura l'occasion d'y revenir !  </p>
+<p>1092 lignes, c'est beaucoup, et pas forcément très <strong>lisible</strong>. Heureusement, il existe d'autres moyens d'afficher les modèles. Mais ça, ce sera pour une autre fois.</p>
+<p>En attendant, n'oublie pas de t'<strong><a href="../email/index.html">inscrire par email</a></strong> pour ne pas rater les prochains épisodes.</p>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+
+  <script src="../static/js/jquery.slim.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
