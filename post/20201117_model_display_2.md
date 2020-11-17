@@ -48,3 +48,5 @@ Une prochaine fois, je te montrerai comment retrouver le format d'entrée depuis
 
 Tu veux poursuivre l'aventure ?  
 **[Inscrit-toi][0]** pour ne rien rater des prochaines escales !
+
+[0]: {{"page//email.md"|yasifipo}}
