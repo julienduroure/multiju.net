@@ -13,8 +13,6 @@ layout: home.html
 #### ... Intelligence Artificielle, Data, Python ...
 ## Une petite pastille, une info, un tuto...<br/>
 
-# Bientôt :)
-
 Pour ne rien rater, inscrits-toi pour <a href="{{'page//email.md'|yasifipo}}">recevoir les eMails Perso !</a>
 
 <br/>
