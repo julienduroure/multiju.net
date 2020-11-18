@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@multiju.net">
+<meta name="twitter:creator" content="@multiju.net">
+<meta name="twitter:title" content="Afficher plus de détails sur le modèle" />
+<meta name="twitter:image" content="http://multiju.net/../static/logo.png">
+<meta name="twitter:description" content="">
+
+
+
+  <title>
+Afficher plus de détails sur le modèle
+</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/css/multiju.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="http://multiju.net">MultiJu.Net</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://multiju.net">MultiJu.Net
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://multiju.net/email/index.html">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+	<div style="min-height:20px"></div>
+  
+
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 text-center">
+  <h1><b>Afficher plus de détails sur le modèle</b></h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Regardons les 2 modèles suivants:</p>
+<pre><code>model_1 = Sequential([
+               Dense(300, input_shape=(784,), activation='relu'),
+               Dense(100, activation='relu'),
+               Dense(10, activation='softmax')     
+])
+model_1.compile(loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+</code></pre>
+
+<p>Voici son résumé :</p>
+<pre><code>Model: &quot;sequential_1&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_3 (Dense)              (None, 300)               235500    
+_________________________________________________________________
+dense_4 (Dense)              (None, 100)               30100     
+_________________________________________________________________
+dense_5 (Dense)              (None, 10)                1010      
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<p>Et le deuxième :</p>
+<pre><code>model_2 = Sequential([
+               Input(shape=(784,)),
+               Dense(300),
+               Activation(keras.activations.relu),
+               Dense(100),
+               Activation(keras.activations.relu),
+               Dense(10),
+               Activation(keras.activations.softmax)   
+])
+model_2.compile(loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+</code></pre>
+
+<p>Et son résumé :</p>
+<pre><code>Model: &quot;sequential_3&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_11 (Dense)             (None, 300)               235500    
+_________________________________________________________________
+activation_1 (Activation)    (None, 300)               0         
+_________________________________________________________________
+dense_12 (Dense)             (None, 100)               30100     
+_________________________________________________________________
+activation_2 (Activation)    (None, 100)               0         
+_________________________________________________________________
+dense_13 (Dense)             (None, 10)                1010      
+_________________________________________________________________
+activation_3 (Activation)    (None, 10)                0         
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<p>Les deux modèles sont <strong>identiques</strong>.  </p>
+<p>Pour la définition du premier, on a utilisé une déclaration la plus condensée possible, là où on a définit plus de couches dans le deuxième, même si le résultat est similaire.  </p>
+<p>On voit que le résumé est lui aussi différent, et reflète bien ces changements.</p>
+<h1>A toi de jouer</h1>
+<p>N'oublie pas de t'<strong><a href="../email/index.html">inscrire par email</a></strong> pour ne pas rater les prochains épisodes.</p>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+
+  <script src="../static/js/jquery.slim.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
