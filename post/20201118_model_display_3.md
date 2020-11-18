@@ -4,7 +4,7 @@ url: model-display-3
 title: Afficher plus de détails sur le modèle
 static: img
 twitter_summary: "Afficher plus de détails sur le modèle"
-twitter_text: "Afficher plus de détails sur le modèle # IntelligenceArtificielle #IA #Deeplearning #keras #python #fr #multijunet"
+twitter_text: "Afficher plus de détails sur le modèle #IntelligenceArtificielle #IA #Deeplearning #keras #python #fr #multijunet"
 ---
 
 Regardons les 2 modèles suivants:
