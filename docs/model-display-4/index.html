@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@multiju.net">
+<meta name="twitter:creator" content="@multiju.net">
+<meta name="twitter:title" content="Comment nommer les couches dans un modèle Keras ?" />
+<meta name="twitter:image" content="http://multiju.net/../static/logo.png">
+<meta name="twitter:description" content="">
+
+
+
+  <title>
+Comment nommer les couches dans un modèle Keras ?
+</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/css/multiju.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="http://multiju.net">MultiJu.Net</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://multiju.net">MultiJu.Net
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://multiju.net/email/index.html">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+	<div style="min-height:20px"></div>
+  
+
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 text-center">
+  <h1><b>Comment nommer les couches dans un modèle Keras ?</b></h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Comment mieux si retrouver au milieu de toutes ces couche ?</p>
+<p>Si tu regardes le modèle suivant :</p>
+<pre><code>model_1 = Sequential([
+               Dense(300, input_shape=(784,), activation='relu'),
+               Dense(100, activation='relu'),
+               Dense(10, activation='softmax')     
+])
+model_1.compile(loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+</code></pre>
+
+<p>Son résumé est le suivant :</p>
+<pre><code>Model: &quot;sequential&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 300)               235500    
+_________________________________________________________________
+dense_1 (Dense)              (None, 100)               30100     
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                1010      
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<p>En tout cas, c'est le cas la première fois que je définis un modèle nommé <em>model_1</em>.  </p>
+<p>Car la deuxième fois, cela donnera :</p>
+<pre><code>Model: &quot;sequential_1&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_3 (Dense)              (None, 300)               235500    
+_________________________________________________________________
+dense_4 (Dense)              (None, 100)               30100     
+_________________________________________________________________
+dense_5 (Dense)              (None, 10)                1010      
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<p>On voit que le nom du modèle et le <strong>nom des couches</strong> changent. Ici, le modèle est simple, donc on arrive à <strong>s'y retrouver</strong>.<br />
+Mais pour un modèle plus complexe, je te conseille de <strong>nommer les couches</strong> :</p>
+<pre><code>model_1 = Sequential([
+               Dense(300, input_shape=(784,), activation='relu', name='input'),
+               Dense(100, activation='relu', name='hidden'),
+               Dense(10, activation='softmax', name='output')     
+], name=&quot;MonModele&quot;)
+model_1.compile(loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+</code></pre>
+
+<p>Cela donne :</p>
+<pre><code>Model: &quot;MonModele&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input (Dense)                (None, 300)               235500    
+_________________________________________________________________
+hidden (Dense)               (None, 100)               30100     
+_________________________________________________________________
+output (Dense)               (None, 10)                1010      
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<p>Y compris si je redéfini mon modèle <em>model_1</em>.</p>
+<p>On verra une prochaine fois quel est l'<strong>avantage</strong> pour une couche d'avoir un <strong>nom constant</strong>.</p>
+<h1>A toi !</h1>
+<p>N'oublie pas de t'<strong><a href="../email/index.html">inscrire par email</a></strong> pour ne pas rater les prochains épisodes.</p>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+
+  <script src="../static/js/jquery.slim.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
