@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@multiju.net">
+<meta name="twitter:creator" content="@multiju.net">
+<meta name="twitter:title" content="Comment retrouver une couche particulière ?" />
+<meta name="twitter:image" content="http://multiju.net/../static/logo.png">
+<meta name="twitter:description" content="">
+
+
+
+  <title>
+Comment retrouver une couche particulière ?
+</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/css/multiju.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="http://multiju.net">MultiJu.Net</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://multiju.net">MultiJu.Net
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://multiju.net/email/index.html">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+	<div style="min-height:20px"></div>
+  
+
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 text-center">
+  <h1><b>Comment retrouver une couche particulière ?</b></h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p>On peut accéder à 1ère couche avec :</p>
+<blockquote>
+<p>model.layers[0]</p>
+</blockquote>
+<p>Je t'en ai parlé déjà, on peut donner un <strong>nom à une couche</strong>, ce qui permet d'avoir un <strong>nom fixe</strong>.<br />
+Dans ce cas là, on peut récupérer la couche de la manière suivante :</p>
+<blockquote>
+<p>model.get_layer("input")</p>
+</blockquote>
+<p>Et tu peux retrouver le <strong>format d'entrée</strong> avec l'attribut <em>input_shape</em>.</p>
+<blockquote>
+<p>model.get_layer("input").input_shape</p>
+</blockquote>
+<p>Cela donne :</p>
+<blockquote>
+<p>(None, 784)</p>
+</blockquote>
+<p>On retrouve bien le format d'entrée 784. Le <em>None</em> ici correspond à la taille du <em>Batch Size</em>, qui n'est pas connu à l'avance.</p>
+<h1>A toi !</h1>
+<p>N'oublie pas de t'<strong><a href="../email/index.html">inscrire par email</a></strong> pour ne pas rater les prochains épisodes.</p>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+
+  <script src="../static/js/jquery.slim.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
