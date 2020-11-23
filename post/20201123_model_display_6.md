@@ -43,4 +43,6 @@ Voilà ce que cela peut donner:
 
 # A toi de jouer
 
-N'oublie pas de t'**inscrire par email** pour ne pas rater les prochains épisodes.
+N'oublie pas de t'**[inscrire par email][0]** pour ne pas rater les prochains épisodes.
+
+[0]: {{"page//email.md"|yasifipo}}
