@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@multiju.net">
+<meta name="twitter:creator" content="@multiju.net">
+<meta name="twitter:title" content="Les 6 étapes de la création d&#39;un modèle" />
+<meta name="twitter:image" content="http://multiju.net/../static/logo.png">
+<meta name="twitter:description" content="">
+
+
+
+  <title>
+Les 6 étapes de la création d&#39;un modèle
+</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/css/multiju.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="http://multiju.net">MultiJu.Net</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://multiju.net">MultiJu.Net
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://multiju.net/email/index.html">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+	<div style="min-height:20px"></div>
+  
+
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 text-center">
+  <h1><b>Les 6 étapes de la création d&#39;un modèle</b></h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Quand on souhaite entraîner une IA, dans la plupart des cas, on va retrouver toujours les mêmes étapes.<br />
+Je vais te présenter ici les grandes étapes, par exemple lorsqu'on cherche à créer un modèle pour la classification.</p>
+<h2>Préparation des données.</h2>
+<p>Les données, ce sont le <strong>nerf de la guerre</strong> en intelligence artificielle.</p>
+<p>Il est souvent nécessaire de passer <strong>beaucoup de temps</strong> et d'<strong>énergie</strong> à la préparation des données.  </p>
+<p>Heureusement, pour démarrer, il existe énormément de <strong>datasets</strong>, contenant des données prête à l'emploi. Ces datasets sont facilement téléchargeable depuis les bibliothèques couramment utilisées en python: <em>keras</em>, <em>tensorflow</em>, <em>sklearn</em>.</p>
+<h2>Construction du modèle</h2>
+<p>Durant cette étape, on va définir les <strong>différentes couches</strong>, les <strong>fonctions d'activation</strong>, les <strong>régulateurs</strong>, les <strong>formats d'entrée et de sortie</strong> du modèle.</p>
+<pre><code>model = Sequential([
+      Dense(8, input_shape=(x_train.shape[1],), activation='relu'),
+      Dense(3, activation='softmax')
+])
+</code></pre>
+
+<h2>Compilation du modèle</h2>
+<p>Ici, on va <strong>configurer</strong> le modèle pour l’entraînement. On va entre autre clarifier:</p>
+<ul>
+<li>la fonction d'<strong>optimisation</strong> utilisée</li>
+<li>la fonction objectif (c'est une traduction pas terrible de <strong>loss</strong>)</li>
+<li>la liste des <strong>paramètres d'évaluation</strong> <em>metrics</em></li>
+</ul>
+<pre><code>model.compile(
+    loss='sparse_categorical_crossentropy',  
+    metrics=['accuracy'],  
+    optimizer=keras.optimizers.Adam(learning_rate=0.005)
+    )
+</code></pre>
+
+<h2>Entraînement du modèle</h2>
+<p>C'est maintenant l'étape la plus <strong>coûteuse en temps machine</strong> : le réseau de neurone va s’entraîner pour la tache qu'on essaie de lui apprendre. Dans le cadre d'un apprentissage supervisé, il faut donc lui fournir, entre autres:</p>
+<ul>
+<li><strong>des données d'entrée</strong></li>
+<li>avec les <strong>labels</strong> correspondants</li>
+<li>éventuellement des données de <strong>validation</strong>, pour vérifier un certain nombre de chose (<em>overfitting</em>, ...)</li>
+<li>Le nombre d'<strong>epochs</strong> que va durer l'apprentissage</li>
+</ul>
+<pre><code>history = model.fit(
+    x_train,  
+    y_train,  
+    epochs=50,  
+    batch_size=5,
+    validation_data=(x_test, y_test)
+    )
+</code></pre>
+
+<p>En retour, cette fonction <em>fit</em> retourne un <strong>historique</strong> des paramètres tout au long de l'apprentissage.</p>
+<h2>Évaluation du modèle</h2>
+<p>On peut maintenant <strong>évaluer le modèle</strong>, afin de vérifier s'il réussi à classifier, par exemple, des données qu'il n'a jamais rencontré pendant son apprentissage.</p>
+<pre><code>model.evaluate(
+  x_val,
+  y_val
+  )
+</code></pre>
+
+<h2>Prédiction</h2>
+<p>Si tu es satisfait du modèle que tu viens d’entraîner, tu peux l'utiliser avec <strong>de nouvelles données</strong>:</p>
+<pre><code>model.predict(x)
+</code></pre>
+
+<h1>A toi de jouer</h1>
+<p>N'oublie pas de t'<strong><a href="../email/index.html">inscrire par email</a></strong> pour ne pas rater les prochains épisodes.</p>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+
+  <script src="../static/js/jquery.slim.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
