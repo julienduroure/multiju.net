@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@multiju.net">
+<meta name="twitter:creator" content="@multiju.net">
+<meta name="twitter:title" content="Comment avoir une vision d&#39;ensemble de ses données ?" />
+<meta name="twitter:image" content="http://multiju.net/../static/logo.png">
+<meta name="twitter:description" content="">
+
+
+
+  <title>
+Comment avoir une vision d&#39;ensemble de ses données ?
+</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/css/multiju.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="http://multiju.net">MultiJu.Net</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://multiju.net">MultiJu.Net
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://multiju.net/email/index.html">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+	<div style="min-height:20px"></div>
+  
+
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 text-center">
+  <h1><b>Comment avoir une vision d&#39;ensemble de ses données ?</b></h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Comme je l'ai déjà évoqué, avoir <strong>de bonnes données</strong> en entrée est une condition nécessaire pour faire du <strong>machine learning</strong> ou bien du <strong>deep learning</strong>.  </p>
+<p>J'aime avoir une <strong>vision d'ensemble</strong> de ces données, quand cela est possible.  </p>
+<p>Pour cela, je me base sur la librairie <strong>pandas</strong>.</p>
+<p>Si je prend l'exemple du <strong>dataset <em>iris</em></strong> de <strong>sklearn</strong>, on peut facilement afficher des informations sur les données :</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="right">0</th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">count</td>
+<td align="right">150</td>
+<td align="right">150</td>
+<td align="right">150</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td align="left">mean</td>
+<td align="right">5.84333</td>
+<td align="right">3.05733</td>
+<td align="right">3.758</td>
+<td align="right">1.19933</td>
+</tr>
+<tr>
+<td align="left">std</td>
+<td align="right">0.828066</td>
+<td align="right">0.435866</td>
+<td align="right">1.7653</td>
+<td align="right">0.762238</td>
+</tr>
+<tr>
+<td align="left">min</td>
+<td align="right">4.3</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0.1</td>
+</tr>
+<tr>
+<td align="left">25%</td>
+<td align="right">5.1</td>
+<td align="right">2.8</td>
+<td align="right">1.6</td>
+<td align="right">0.3</td>
+</tr>
+<tr>
+<td align="left">50%</td>
+<td align="right">5.8</td>
+<td align="right">3</td>
+<td align="right">4.35</td>
+<td align="right">1.3</td>
+</tr>
+<tr>
+<td align="left">75%</td>
+<td align="right">6.4</td>
+<td align="right">3.3</td>
+<td align="right">5.1</td>
+<td align="right">1.8</td>
+</tr>
+<tr>
+<td align="left">max</td>
+<td align="right">7.9</td>
+<td align="right">4.4</td>
+<td align="right">6.9</td>
+<td align="right">2.5</td>
+</tr>
+</tbody>
+</table>
+<p>On retrouve donc le nombre d'enregistrement, la moyenne, l'écart type, la valeur minimum et maximum de chaque champ.<br />
+Ainsi que le <em>percentille</em> à 25, 50 et 75%.  </p>
+<p>Pour afficher toutes ces informations, il faut dans un premier temps créer un <em>DataFrame</em>.</p>
+<blockquote>
+<p>import pandas as pd<br />
+x_pandas = pd.DataFrame(x_train)</p>
+</blockquote>
+<p>Puis demander l'affichage de ces valeurs:</p>
+<blockquote>
+<p>x_pandas.describe()</p>
+</blockquote>
+<h1>A toi !</h1>
+<p>N'oublie pas de t'<strong><a href="../email/index.html">inscrire par email</a></strong> pour ne pas rater les prochains épisodes.</p>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+
+  <script src="../static/js/jquery.slim.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
