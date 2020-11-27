@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@multiju.net">
+<meta name="twitter:creator" content="@multiju.net">
+<meta name="twitter:title" content="Overfitting" />
+<meta name="twitter:image" content="http://multiju.net/../static/logo.png">
+<meta name="twitter:description" content="">
+
+
+
+  <title>
+Overfitting
+</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/css/multiju.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="http://multiju.net">MultiJu.Net</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://multiju.net">MultiJu.Net
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://multiju.net/email/index.html">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+	<div style="min-height:20px"></div>
+  
+
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 text-center">
+  <h1><b>Overfitting</b></h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Qu'est ce que l'<em>overfitting</em> ?</h1>
+<p>On parle ici d'<strong>apprentissage supervisé</strong>: il y a:
+<em> les <strong>données d'apprentissage</strong>, qui servent à ton réseau à <strong>apprendre</strong>
+</em> les <strong>données de validation</strong>, qui servent à valider ce qu'a appris de ton réseau au fur et à mesure de son apprentissage.
+* les <strong>données de test</strong>, qui servent à connaître l'efficacité de ton réseau, une fois l'apprentissage terminé.</p>
+<p>Ce qui est important ici, c'est que ton réseau, durant son apprentissage, <strong>ne doit jamais avoir rencontré</strong> les données de test, ni les données de validation.  </p>
+<p>Si je prend l'exemple d'une <strong>classification binaire</strong> d'un texte, tu peux apprendre à ton réseau de faire la différence entre un <strong>commentaire positif</strong> et un <strong>commentaire négatif</strong>.</p>
+<p>On peut faire cet exercice, par exemple, avec le <strong>dataset imdb</strong> accessible avec <em>keras</em></p>
+<pre><code>keras.datasets.imdb.load_data(num_words=10000)
+</code></pre>
+
+<p>Je construis le modèle suivant :</p>
+<pre><code>Model: &quot;sequential_1&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_3 (Dense)              (None, 16)                160016    
+_________________________________________________________________
+dense_4 (Dense)              (None, 16)                272       
+_________________________________________________________________
+dense_5 (Dense)              (None, 1)                 17        
+=================================================================
+Total params: 160,305
+Trainable params: 160,305
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<p>Je prépare les données d'entrée en construisant des <strong>séquences</strong>, dont je reparlerais une prochaine fois.</p>
+<p>Une fois l'entrainement réalisé, je construis les deux courbes suivants, pour le <strong>loss</strong> et l'<strong>accuracy</strong> :</p>
+<p><img alt="" src="img/20201127_overfitting_loss.png" /></p>
+<p><img alt="" src="img/20201127_overfitting_accuracy.png" /></p>
+<p>On remarque que :</p>
+<ul>
+<li>avec les données d'apprentissage (en bleu), le réseau <strong>sait différencier de mieux en mieux</strong> les commentaires : l'erreur est de plus en plus faible (<em>loss</em>), et la pertinence est de plus en plus grande (<em>accuracy</em>).</li>
+<li>avec les données de validation : après quelques <em>epochs</em> seulement, l'<strong>erreur commence à augmenter</strong>. <strong>La pertinence stagne</strong> quasiment de le départ, voire diminue au fur et à mesure de l'apprentissage.</li>
+</ul>
+<p><strong>Que c'est-il passé ?</strong></p>
+<p>Le réseau a appris <strong>un peu trop bien</strong> à différencier les commentaires qu'il a vu pendant l’entraînement.  </p>
+<p>Mais il est <strong>incapable de généraliser</strong>.</p>
+<p>C'est le principe de l'<strong>overfitting</strong>.</p>
+<h1>A toi de jouer</h1>
+<p>N'oublie pas de t'<strong><a href="../email/index.html">inscrire par email</a></strong> pour ne pas rater les prochains épisodes.</p>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+
+  <script src="../static/js/jquery.slim.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
