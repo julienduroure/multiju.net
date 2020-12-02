@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@multiju.net">
+<meta name="twitter:creator" content="@multiju.net">
+<meta name="twitter:title" content="Qu&#39;est ce qu&#39;une matrice de confusion ?" />
+<meta name="twitter:image" content="http://multiju.net/../static/logo.png">
+<meta name="twitter:description" content="">
+
+
+
+  <title>
+Qu&#39;est ce qu&#39;une matrice de confusion ?
+</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/css/multiju.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="http://multiju.net">MultiJu.Net</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://multiju.net">MultiJu.Net
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://multiju.net/email/index.html">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+	<div style="min-height:20px"></div>
+  
+
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 text-center">
+  <h1><b>Qu&#39;est ce qu&#39;une matrice de confusion ?</b></h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Une <strong>matrice de confusion</strong> est une matrice qui permet de mesurer la <strong>qualité d'un modèle de classification</strong>.</p>
+<p>Sur <strong>les lignes</strong> de la matrice, on trouve les classes réelles.<br />
+Sur <strong>les colonnes</strong>, on retrouve les prévisions calculées par le modèle.  </p>
+<h1>Exemple d'une classification binaire</h1>
+<p>Dans le cas d'<strong>une classification binaire</strong>, on aura une <strong>matrice 2x2</strong> :</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">prédiction classe 0</th>
+<th align="center">prédiction classe 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>classe 0</td>
+<td align="center">32</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td>classe 1</td>
+<td align="center">2</td>
+<td align="center">27</td>
+</tr>
+</tbody>
+</table>
+<p>Il y a dans cet exemple <strong>64 échantillons</strong>.<br />
+35 appartiennent à la classe 0 (ligne 0), et 29 à la classe 1 (ligne 1).  </p>
+<p>Le modèle en a détecté 34 dans la classe 0 (colonne 0), et 30 dans la classe 1 (colonne 1).  </p>
+<p>Le modèle a détecté correctement 32 échantillons de la classe 0, et 27 échantillons de la classe 1.<br />
+On peut lire les données correctement prédites en regardant <strong>la diagonale</strong> de la matrice.</p>
+<p>Le modèle a prédit 3 échantillons dans la classe 1 alors que ce sont des données de la classe 0. On parle de <strong>faux positifs</strong>.</p>
+<p>Le modèle a prédit 2 échantillons dans la classe 0 alors qu'il s'agissait de données de la classe 1. On parle de <strong>faux négatifs</strong>.</p>
+<h1>Comment construire une matrice de confusion ?</h1>
+<p>Le plus simple est d'utiliser l'outil mis à disposition dans la bibliothèque <em>sklearn</em> :</p>
+<pre><code>from sklearn.metrics import confusion_matrix
+</code></pre>
+
+<p>On peut l'appeler ensuite de cette manière :</p>
+<pre><code>matrice_confusion = confusion_matrix(y_reel, y_predit)
+</code></pre>
+
+<p>Il faut donc passer en paramètres :
+<em> En premier <strong>les valeurs réels</strong> des classes, le plus souvent il s'agit donc des labels du </em>dataset<em>
+</em> Puis <strong>les valeurs prédites</strong> par le modèle</p>
+<p>On obtient donc le résultat suivant, par exemple:</p>
+<pre><code>print(matrice_confusion)
+
+array([[40,  2],
+       [ 0, 72]])
+</code></pre>
+
+<p>(Ici, on a donc 2 faux positifs, et aucun faux négatifs)</p>
+<h1>A toi !</h1>
+<p>Tu veux poursuivre l'aventure ?<br />
+<strong><a href="../email/index.html">Inscrit-toi</a></strong> pour ne rien rater des prochaines escales !</p>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+
+  <script src="../static/js/jquery.slim.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
