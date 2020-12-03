@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@multiju.net">
+<meta name="twitter:creator" content="@multiju.net">
+<meta name="twitter:title" content="Comment lancer Tensorboard ?" />
+<meta name="twitter:image" content="http://multiju.net/../static/logo.png">
+<meta name="twitter:description" content="">
+
+
+
+  <title>
+Comment lancer Tensorboard ?
+</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/css/multiju.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="http://multiju.net">MultiJu.Net</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://multiju.net">MultiJu.Net
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://multiju.net/email/index.html">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+	<div style="min-height:20px"></div>
+  
+
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 text-center">
+  <h1><b>Comment lancer Tensorboard ?</b></h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Et tout d'abord, qu'est ce que <strong>Tensorboard</strong> ?</p>
+<p><strong>Tensorboad</strong> est un outil de <strong>visualisation interactive</strong> des données d’entraînement.</p>
+<p>Il permet (entre autres):
+<em> de visualiser les courbes d'apprentissage, et de pouvoir les comparer, entre plusieurs entraînement différents.
+</em> de visualiser diverses analyses statistiques de tes modèles
+<em> de visualiser les images, sons, textes, générés par ton modèle
+</em> de visualiser des données multi-dimensionnelles projetées en 3D</p>
+<p>Bref, tu l'auras compris, c'est un <strong>outil assez puissant</strong> qui permet de réaliser et <strong>visualiser énormément de choses différentes</strong>.</p>
+<p>Pour aujourd'hui, on va voir comment lancer <strong>tensorboard</strong>. L'outil est tellement varié, qu'on pourra y revenir pour expliquer certaines fonctionnalités, les unes après les autres.</p>
+<p>Bonne nouvelle : <strong>Tensorboard</strong> est directement disponible avec <strong>Tensorflow</strong> !</p>
+<ul>
+<li>Si as installé <strong>Tensorflow</strong> sur ton ordinateur, tu peux lancer <em>Tensorboard</em> de la manière suivante :</li>
+</ul>
+<pre><code>tensorboard --logdir /lien/vers/logs/
+</code></pre>
+
+<p>Cela lance <strong>un serveur</strong>, accessible par défaut sur le <strong>port 6006</strong> :</p>
+<blockquote>
+<p>http://localhost:6006/</p>
+</blockquote>
+<ul>
+<li>Si tu utilises <strong>Tensorflow</strong> sur <strong>Google Colab</strong>, tu peux lancer <strong>Tensorboard</strong> comme ceci :</li>
+</ul>
+<pre><code>%load_ext tensorboard
+%tensorboard --logdir /lien/vers/logs/
+</code></pre>
+
+<p><strong>Tensorboard</strong> sera affiché dans le <strong>résultat de la cellule</strong>.</p>
+<p>Comme tu peux le voir, <strong>tensorboard</strong> nécessite un répertoire de logs, qui doit avoir été <strong>généré lors de l'apprentissage</strong>.</p>
+<p>Tu pourras le découvrir demain, il existe heureusement un <strong>callback</strong> qui permet de <strong>générer automatiquement le contenu</strong> de ce répertoire.</p>
+<h1>A toi !</h1>
+<p>N'oublie pas de t'<strong><a href="../email/index.html">inscrire par email</a></strong> pour ne pas rater les prochains épisodes.</p>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+
+  <script src="../static/js/jquery.slim.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
